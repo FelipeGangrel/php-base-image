@@ -41,6 +41,7 @@ RUN docker-php-ext-install \
         pdo_pgsql \
         soap \
         zip \
+        intl \
     && docker-php-ext-enable \
         bcmath \
         exif \  
@@ -52,6 +53,7 @@ RUN docker-php-ext-install \
         pdo_mysql \
         pdo_pgsql \
         soap \
+        intl \
         xdebug
 # Get latest Composer
 COPY --from=composer_downloader /usr/bin/composer /usr/bin/composer

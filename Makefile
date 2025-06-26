@@ -23,6 +23,7 @@ test:
 	@docker run --rm $(IMAGE_NAME):$(APP_VERSION) php -i | grep "short_open_tag => Off => Off"
 	@docker run --rm $(IMAGE_NAME):$(APP_VERSION) php -i | grep "memory_limit => 512M => 512M"
 	@docker run --rm $(IMAGE_NAME):$(APP_VERSION) php -m | grep soap
+	@docker run --rm $(IMAGE_NAME):$(APP_VERSION) php -m | grep intl
 
 destroy:
 	docker image rm $(IMAGE_NAME):$(APP_VERSION)
